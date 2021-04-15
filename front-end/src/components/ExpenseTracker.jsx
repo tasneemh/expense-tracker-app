@@ -89,6 +89,7 @@ const ExpenseTracker = (props) => {
                   <option value="Gifts">Gifts</option>
                   <option value="Savings">Savings</option>
                   <option value="Rental Income">Rental Income</option>
+                  <option value="Travel">Travel</option>
                 </select>
               </div>
           </div>

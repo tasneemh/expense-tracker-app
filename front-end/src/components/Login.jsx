@@ -31,8 +31,10 @@ const Login = () => {
           {errors.email && <span>This field is required</span>} 
           <div className="block">
             <label>Password: </label>
-            <input {...register("password", { required: true })}/>
-            <AiFillEye />            
+            <input {...register("password", { required: true })}
+             
+            />
+            <AiFillEye />           
           </div>
           {errors.password && <span>This field is required</span>}          
           <div>
