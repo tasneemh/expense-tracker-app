@@ -30,7 +30,8 @@ function App() {
   const [borderColForExp, setBorderColForExp] = useState([]);
   const [hoverBgColForExp, setHoverBgColForExp] = useState([]);
   const [hoverBorderColForExp, setHoverBorderColForExp] = useState([]);
-
+  const [visibility, setVisibility] = useState(false);
+  const [eyeIcon, setEyeIcon] = useState("");
   const validate = () =>{
     setLoggedIn(true);
   }
@@ -45,7 +46,11 @@ function App() {
           <Register />
         </Route>
         <Route path="/login">
-          <Login />
+          <Login 
+          visibility={visibility}
+          setVisibility={setVisibility}
+          eyeIcon={eyeIcon}
+          setEyeIcon={setEyeIcon}/>
         </Route>
         <Route path="/user">
           <User 

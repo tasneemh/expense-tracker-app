@@ -78,10 +78,11 @@ const DoughnutChartForExpense = (props) => {
   return (
     <div>
       <Doughnut 
+      className="doughnut-chart"
       data={{
         labels: labelsArrForExp,
         datasets: [{
-        label: '# of votes',
+        // label: '# of votes',
         backgroundColor: bgColForExp,
         borderColor: borderColForExp,
         borderWidth: 1,
@@ -91,7 +92,7 @@ const DoughnutChartForExpense = (props) => {
         }]
       }}
       height={400}
-      width={600}
+      width={400}
       options={{ maintainAspectRatio: false,
         scales:{
           yAxes:[

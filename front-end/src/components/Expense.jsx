@@ -22,10 +22,9 @@ const Expense = (props) => {
 
   return (
     <div className="card">
-      <p>Expense</p>
+      <p className="card-title">Expense</p>
       <p>{"$"}{totalExpense}</p>
-      <div className="container">
-      <h4>Doughnut Chart</h4>  
+      <div className="container"> 
       <DoughnutChartForExpense 
       dataArrForExp={dataArrForExp}
       expArr={expArr}

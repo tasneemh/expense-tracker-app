@@ -79,10 +79,11 @@ const DoughnutChartForIncome = (props) => {
   return (
     <div>
       <Doughnut 
+      className="doughnut-chart"
       data={{
       labels: labelsArrForInc,
         datasets: [{
-        label: '# of votes',
+        // label: '# of votes',
         backgroundColor: bgColForInc,
         borderColor: borderColForInc,
         borderWidth: 1,
@@ -92,7 +93,7 @@ const DoughnutChartForIncome = (props) => {
         }]
       }}
       height={400}
-      width={600}
+      width={400}
       options={{ maintainAspectRatio: false,
         scales:{
           yAxes:[

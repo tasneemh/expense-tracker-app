@@ -53,12 +53,12 @@ const ExpenseItem = (props) => {
     });
   };
   return (
-    <li >
+    <div >
       <h4>{expenseItem.category}</h4>
-      <p>{"$"}{expenseItem.amount}{"-"}{expenseItem.expense_date}
+      <p>{"$"}{expenseItem.amount}{" - "}{expenseItem.expense_date}
       <button onClick={deleteExpenseItem}><AiFillDelete/></button>
       </p>
-    </li>
+    </div>
   )
 }
 

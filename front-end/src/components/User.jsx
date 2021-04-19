@@ -4,13 +4,15 @@ import Income from "./Income";
 import Expense from "./Expense";
 import ExpenseTracker from "./ExpenseTracker";
 
+
 export default function User(props){
   const {loggedIn, validate, value, onChange, expenseArr, setExpenseArr, totalIncome, setTotalIncome, totalExpense, setTotalExpense, balance, setBalance, dataArrForInc, setDataArrForInc, dataArrForExp, setDataArrForExp,incArr, setIncArr, expArr, setExpArr, bgColForInc, setBgColForInc, bgColForExp, setBgColForExp, borderColForInc, setBorderColForInc,hoverBgColForInc,setHoverBgColForInc, hoverBorderColForInc,
   setHoverBorderColForInc, borderColForExp,setBorderColForExp,hoverBgColForExp,setHoverBgColForExp,hoverBorderColForExp,setHoverBorderColForExp, labelsArrForInc,setLabelsArrForInc,labelsArrForExp,setLabelsArrForExp} = props;
   
+  console.log("validate in user component: ",validate);
   validate();
   return (
-    <div>
+    <div className="main-section">
       <Navbar loggedIn={loggedIn}/>
       <div className="details-container">
       <Income 
@@ -64,6 +66,7 @@ export default function User(props){
       labelsArrForExp={labelsArrForExp}
       setLabelsArrForExp={setLabelsArrForExp}/>
       </div>
+      
     </div>
   );
 };

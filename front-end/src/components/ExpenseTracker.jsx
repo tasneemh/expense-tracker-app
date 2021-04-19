@@ -11,8 +11,8 @@ const ExpenseTracker = (props) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const history = useHistory();
   const user = history.location.state.user;
-  
   const userId = user.id;
+
   const onSubmit = (data) =>{
     data.date = value.toString().slice(0,15);
     data.amount= Number(data.amount);
@@ -59,25 +59,24 @@ const ExpenseTracker = (props) => {
   return (
     <div className="card">
       <h2><b>Expense Tracker</b></h2>
-      <p>Powered by Speechly</p>
       <h3>Total Balance: ${balance}</h3>
-      <p>Try saying</p>
-      <p>Add income for $100 in category salary for Monday</p>
       <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="row">
-        <div>
-          <label>Type</label>
-            <div>
-              <select {...register("type")}>
+      <div className="item-row">
+        <div className="item-column">
+          <label className="item-label">Type</label>
+            <div className="item-options-col">
+              <select className="item-options"
+              {...register("type")}>
                 <option value="income">Income</option>
                 <option value="expense">Expense</option>
               </select>
             </div>
           </div>
-          <div>
-            <label>Category</label>
-              <div>
-                <select {...register("category")}>
+          <div className="item-column">
+            <label className="item-label">Category</label>
+              <div className="item-options-col">
+                <select className="item-options"
+                {...register("category")}>
                   <option value="Salary">Salary</option>
                   <option value="Business">Business</option>
                   <option value="Investments">Investments</option>
@@ -94,29 +93,30 @@ const ExpenseTracker = (props) => {
               </div>
           </div>
       </div>
-      <div className="row">
-        <div>
-          <label>Amount</label>
-            <div>
-              <input type="number" {...register("amount")}/>
+      <div className="item-row">
+        <div className="item-column">
+          <label className="item-label">Amount</label>
+            <div className="item-amount-col">
+              <input className="item-amount" type="number" {...register("amount")}/>
             </div>
           </div>
-          <div >
-            <label>Date</label>
-              <div {...register("date")}>
+          <div className="item-column">
+            <label className="item-label">Date</label>
+              <div className="date-col" {...register("date")}>
                 <DatePicker 
                 onChange={onChange}
                 value={value}/>
               </div>
           </div>
       </div>
-      <input type="submit"/>
-      
+      <div className="create-btn-container">
+      <input className="create-btn" type="submit" value="CREATE"/>
+      </div>
       
       </form>
-      <div className="">
+      <div className="list-item-container">
       <p>Array of list from database</p>
-      <ul className="list-item">
+      <div className="list-item">
       {expenseArr && expenseArr.map(expenseItem=><ExpenseItem
         totalIncome={totalIncome}
         totalExpense={totalExpense}          
@@ -126,10 +126,10 @@ const ExpenseTracker = (props) => {
         setExpenseArr={setExpenseArr}
         key={expenseItem.id}
         setBalance={setBalance}/>)}  
-      </ul>    
+      </div>    
       </div>
     </div>
   )
 }
 
-export default ExpenseTracker
+export default ExpenseTracker;
