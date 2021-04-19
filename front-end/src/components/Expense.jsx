@@ -5,7 +5,7 @@ const Expense = (props) => {
   setHoverBorderColForExp, labelsArrForExp,
   setLabelsArrForExp} = props;
   
-  console.log("expenseArr in Expense component: ", expenseArr);
+  //console.log("expenseArr in Expense component: ", expenseArr);
 
   const getDataArrForExp = () =>{  
     const arr = expenseArr.filter(item=>{

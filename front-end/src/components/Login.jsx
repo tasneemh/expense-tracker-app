@@ -10,13 +10,12 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;
 const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
 const Login = (props) => {
-  const {visibility, setVisibility, eyeIcon, setEyeIcon} = props;
+  const {visibility, setVisibility} = props;
   const { register, handleSubmit, formState: { errors } } = useForm();
   const history = useHistory();
 
   const togglePasswordVisibility = () =>{
     setVisibility(!visibility);
-    //setEyeIcon(visibility ? eyeSlash : eye);
   };
   const onSubmit = data => {
     console.log(data);
@@ -33,13 +32,14 @@ const Login = (props) => {
   //history.push("/login");
   return (
     <div className="form-container">
-        <form className="form"
+        <form className="form login-form"
         onSubmit={handleSubmit(onSubmit)}>
-          <div className="block">
+        <h1>Login Form</h1>
+          <div >
             <label>Email: </label>
             <input {...register("email", { required: true })}/>                     
           </div>
-          {errors.email && <span>This field is required</span>} 
+          {errors.email && <span className="form-errors">This field is required</span>} 
           <div className="password-wrapper">
             <label>Password: </label>
             <input type={visibility? "text" : "password"}{...register("password", { required: true })}             
@@ -48,7 +48,7 @@ const Login = (props) => {
              togglePasswordVisibility}>{eye}</i> : <i className="password-eye" onClick={
              togglePasswordVisibility}>{eyeSlash}</i> }                 
           </div>
-          {errors.password && <span>This field is required</span>}          
+          {errors.password && <span className="form-errors">This field is required</span>}          
           <div>
             <input className="login-btn" type="submit" value="SUBMIT"/>
           </div>          

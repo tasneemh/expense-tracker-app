@@ -9,7 +9,6 @@ export default function User(props){
   const {loggedIn, validate, value, onChange, expenseArr, setExpenseArr, totalIncome, setTotalIncome, totalExpense, setTotalExpense, balance, setBalance, dataArrForInc, setDataArrForInc, dataArrForExp, setDataArrForExp,incArr, setIncArr, expArr, setExpArr, bgColForInc, setBgColForInc, bgColForExp, setBgColForExp, borderColForInc, setBorderColForInc,hoverBgColForInc,setHoverBgColForInc, hoverBorderColForInc,
   setHoverBorderColForInc, borderColForExp,setBorderColForExp,hoverBgColForExp,setHoverBgColForExp,hoverBorderColForExp,setHoverBorderColForExp, labelsArrForInc,setLabelsArrForInc,labelsArrForExp,setLabelsArrForExp} = props;
   
-  console.log("validate in user component: ",validate);
   validate();
   return (
     <div className="main-section">

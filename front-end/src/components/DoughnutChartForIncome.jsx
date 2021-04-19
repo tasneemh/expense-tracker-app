@@ -12,7 +12,7 @@ const DoughnutChartForIncome = (props) => {
       const arr2 = await dataArrForInc.map(item=>{
       arr3.unshift(item.amount);
       });
-      console.log("arr3: in doughnut chart: ",arr3);
+      //console.log("arr3: in doughnut chart: ",arr3);
       setIncArr(arr3);
     }  
   };
@@ -74,8 +74,8 @@ const DoughnutChartForIncome = (props) => {
     getIncomeArr();
     backroundColorArr();
   }, [dataArrForInc]);
-  console.log("bgColForInc: ", bgColForInc);
-  console.log("incArr: ", incArr);
+  //console.log("bgColForInc: ", bgColForInc);
+  //console.log("incArr: ", incArr);
   return (
     <div>
       <Doughnut 
