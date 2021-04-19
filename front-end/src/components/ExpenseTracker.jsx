@@ -115,8 +115,7 @@ const ExpenseTracker = (props) => {
       
       </form>
       <div className="list-item-container">
-      <p>Array of list from database</p>
-      <div className="list-item">
+      <div className="list-items">
       {expenseArr && expenseArr.map(expenseItem=><ExpenseItem
         totalIncome={totalIncome}
         totalExpense={totalExpense}          
