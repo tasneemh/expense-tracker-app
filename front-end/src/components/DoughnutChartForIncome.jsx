@@ -3,7 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 
 const DoughnutChartForIncome = (props) => {
   const {dataArrForInc, incArr, setIncArr, bgColForInc, setBgColForInc, borderColForInc, setBorderColForInc,hoverBgColForInc,setHoverBgColForInc, hoverBorderColForInc, setHoverBorderColForInc, labelsArrForInc, setLabelsArrForInc} = props;
-  console.log("dataArrForInc in DoughnutChart: ",dataArrForInc);
+  //console.log("dataArrForInc in DoughnutChart: ",dataArrForInc);
   let arr = [];
   
   const getIncomeArr = async () =>{

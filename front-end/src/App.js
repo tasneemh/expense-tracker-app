@@ -31,6 +31,7 @@ function App() {
   const [hoverBgColForExp, setHoverBgColForExp] = useState([]);
   const [hoverBorderColForExp, setHoverBorderColForExp] = useState([]);
   const [visibility, setVisibility] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   const validate = () =>{
     setLoggedIn(true);
   }
@@ -45,6 +46,8 @@ function App() {
           <Register 
           visibility={visibility}
           setVisibility={setVisibility}
+          errorMsg={errorMsg}
+          setErrorMsg={setErrorMsg}
           />
         </Route>
         <Route path="/login">

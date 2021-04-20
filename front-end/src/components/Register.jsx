@@ -18,7 +18,7 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;
 const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
 const Register = (props) => {
-  const { visibility, setVisibility} = props;
+  const { visibility, setVisibility, errorMsg, setErrorMsg} = props;
 
   const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupResolver(schema)});
   
@@ -30,13 +30,20 @@ const Register = (props) => {
 
   const onSubmit = (data) =>{
     console.log("data: ", data);
-    axios.post("http://localhost:8080/savenewuser", {data}).then(response =>{      
-      const user = response.data.newUser;
+    axios.post("http://localhost:8080/savenewuser", {data}).then(response =>{     
+      console.log("response inside register.jsx in axios: ", response); 
+      //user already registered
+      if (response.data.message){
+        setErrorMsg(response.data.message);
+      } else{
+      //if user is not registered
+        const user = response.data.newUser;
       //console.log("user inside register: ", user);
-      history.push({
+        history.push({
         pathname: `/user`,
         state: {user}
-      });
+        });
+      }      
     }).catch(error=>{
       console.log("error inside register: ",error);
     });
@@ -61,6 +68,7 @@ const Register = (props) => {
         <input {...register("email", { required: true, maxLength: 20 })}/>
       </div>
         <p className="form-errors">{errors.email?.message} </p>
+        <p className="form-errors">{errorMsg}</p>
         <div className="password-wrapper">
         <label>Password: </label>
         <input type={visibility? "text" : "password"} {...register("password", { required: true, minLength: 5, pattern: /^[A-Za-z]+$/i })}/>

@@ -3,7 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 
 const DoughnutChartForExpense = (props) => {
   const {dataArrForExp, expArr, setExpArr, bgColForExp, setBgColForExp, borderColForExp, setBorderColForExp,hoverBgColForExp,setHoverBgColForExp, hoverBorderColForExp, setHoverBorderColForExp, labelsArrForExp, setLabelsArrForExp} = props;
-  console.log("dataArrForExp in DoughnutChart: ",dataArrForExp);
+  //console.log("dataArrForExp in DoughnutChart: ",dataArrForExp);
   
   const getExpenseArr = async () =>{
     let arr3 = [];
@@ -11,7 +11,7 @@ const DoughnutChartForExpense = (props) => {
       const arr2 = await dataArrForExp.map(item=>{
       arr3.unshift(item.amount);
       });
-      console.log("arr3: in doughnut chart: ",arr3);
+      //console.log("arr3: in doughnut chart: ",arr3);
     setExpArr(arr3);    
     }  
   };
@@ -73,8 +73,8 @@ const DoughnutChartForExpense = (props) => {
     getExpenseArr();
     backroundColorArr();
   }, [dataArrForExp]);
-  console.log("bgColForExp: ", bgColForExp);
-  console.log("expArr: ", expArr);
+  //console.log("bgColForExp: ", bgColForExp);
+  //console.log("expArr: ", expArr);
   return (
     <div>
       <Doughnut 
