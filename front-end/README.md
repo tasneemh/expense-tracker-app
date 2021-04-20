@@ -1,4 +1,4 @@
-EXPENSE TRACKER
+### EXPENSE TRACKER
 Do you want to track all the monthly savings, income and the expenses to plan a better future but not sure where to start? No worries, you can use this expense tracker (a full stack web application) which can help you in managing your monthly budget. 
 
 ## Screenshots
